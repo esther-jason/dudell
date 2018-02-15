@@ -36,7 +36,7 @@ ourApp.getAnswer = function() {
 
 
 const popSongs = [
-    `Justin Timberlake, SexyBack`,
+    // `q_artist=Justin Timberlake&q_track=SexyBack`
     `Beyonce, Crazy in Love`,
     `Bruno Mars, 24K Magic`,
     `Ed Sheeran, Shape of You`,
@@ -70,50 +70,78 @@ const hiphopSongs = [
 
 
 ourApp.assignSong = function(quizData) {
+
+    let songTitle;
+
     if (quizData >= 4 && quizData <=6) {
         const songChoice = Math.floor(Math.random() * popSongs.length);
         console.log(popSongs[songChoice]);
+        songTitle = popSongs[songChoice]
+        // getSong(songTitle);
+
         // choose pop song
     } else if (quizData >= 7 && quizData <= 10){
+        const songChoice = Math.floor(Math.random() * rockSongs.length);
+        // console.log(rockSongs[songChoice]);
+        songTitle = rockSongs[songChoice]
+
+        // getSong(songTitle);
+
         // choose rock song
     } else if (quizData >= 11 && quizData <= 13) {
+        const songChoice = Math.floor(Math.random() * hiphopSongs.length);
+        // console.log(hiphopSongs[songChoice]);
+        songTitle = hiphopSongs[songChoice]
+        // getSong(songTitle);
+
         // choose hiphop
     } else if (quizData >= 14 && quizData <= 16) {
+        const songChoice = Math.floor(Math.random() * classicSongs.length);
+        // console.log(classicSongs[songChoice]);
+        songTitle = classicSongs[songChoice]
         // choose classic
+        // getSong(songTitle);
     }
+
+    ourApp.getSong(songTitle)
+
 }
 
-// function getSong(artist, title) {
-//     return $.ajax({
-//         url: 'https://proxy.hackeryou.com',
-//         method: 'GET',
-//         dataType: 'json',
-//         data: {
-//             reqUrl: 'http://api.musixmatch.com/ws/1.1/matcher.lyrics.get',
-//             params: {
-//                 apikey: '9bb3f51d28bc48a3b736688321570c4a',
-//                 f_has_lyrics: true,
-//                 q_artist: artist,
-//                 q_track: title
-//             }
-//         }
-//     })
-//         .then((res) => {
-//             let lyrics = res.message.body.lyrics.lyrics_body;
-//             console.log(lyrics);
-//             function chooseSong() {
-//                 $('.song-words').text(`${lyrics}`)
-//             }
-//             chooseSong();
-//         });
-// }
+ourApp.getSong = (songChoice) => {
+    // console.log(songChoice.split(','));
+    const newArray = songChoice.split(',')
 
 
+    return $.ajax({
+        url: 'https://proxy.hackeryou.com',
+        method: 'GET',
+        dataType: 'json',
+        data: {
+            reqUrl: `http://api.musixmatch.com/ws/1.1/matcher.lyrics.get`,
+            params: {
+                apikey: '9bb3f51d28bc48a3b736688321570c4a',
+                f_has_lyrics: true,
+                q_artist: newArray[0],
+                q_track: newArray[1]
+            }
+        }
+    })
+        .then((res) => {
+            let lyrics = res.message.body.lyrics.lyrics_body;
+            console.log(lyrics);
+            function chooseSong() {
+                $('.song-words').text(`${lyrics}`)
+            }
+            chooseSong();
+            console.log(res);
+        });
+}   
 
 
 
 
 $(function(){
     ourApp.getAnswer();
+    // getSong();
 });
 
