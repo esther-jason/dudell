@@ -137,7 +137,9 @@ ourApp.getSong = (songChoice) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
             console.log(lyrics);
             function chooseSong() {
-                $('.song-words').text(`${lyrics}`)
+                $('.song-words').text(`${lyrics}`);
+                $('.song-words').append(`${newArray}`)
+                console.log(newArray)
             }
             chooseSong();
             console.log(res);
