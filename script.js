@@ -171,7 +171,7 @@ ourApp.getDrink = (blah) => {
 
 $(function(){
     ourApp.getAnswer();
-    ourApp.getDrink();
+    // ourApp.getDrink();
     // getSong();
 });
 
