@@ -71,14 +71,20 @@ const hiphopSongs = [
 
 ourApp.assignSong = function(quizData) {
     if (quizData >= 4 && quizData <=6) {
-        const songChoice = Math.floor(Math.random() * popSongs.length);
-        console.log(popSongs[songChoice]);
+        const popChoice = Math.floor(Math.random() * popSongs.length);
+        console.log(popSongs[popChoice]);
         // choose pop song
     } else if (quizData >= 7 && quizData <= 10){
+        const rockChoice = Math.floor(Math.random() * rockSongs.length);
+        console.log(rockSongs[rockChoice]);
         // choose rock song
     } else if (quizData >= 11 && quizData <= 13) {
+        const hiphopChoice = Math.floor(Math.random() * hiphopSongs.length);
+        console.log(hiphopSongs[hiphopChoice]);
         // choose hiphop
     } else if (quizData >= 14 && quizData <= 16) {
+        const classicChoice = Math.floor(Math.random() * classicSongs.length);
+        console.log(classicSongs[classicChoice]);
         // choose classic
     }
 }
