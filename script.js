@@ -34,39 +34,86 @@ ourApp.getAnswer = function() {
     });
 }
 
-ourApp.assignSong = function(data) {
-    console.log(data);
+
+const popSongs = [
+    `Justin Timberlake, SexyBack`,
+    `Beyonce, Crazy in Love`,
+    `Bruno Mars, 24K Magic`,
+    `Ed Sheeran, Shape of You`,
+    `Justin Bieber, Sorry`,
+    `Ariana Grande, One Last Time`
+];
+
+const rockSongs = [
+    `Blink 182, All the Small Things`,
+    `Green Day, Time of Your Life`,
+    `Jimmy Eat World, The Middle`,
+    `No Doubt, Don't Speak`,
+    `Mumford and Sons, I Will Wait`,
+    `Nirvana, Teen Spirit`
+];
+
+const classicSongs = [
+    `The Beatles, Hey Jude`,
+    `Journey, Don't Stop Believin`,
+    `Heart, Barracuda`,
+    `David Bowie, Changes`
+];
+
+const hiphopSongs = [
+    `Drake, Hotline Bling`,
+    `Weeknd, Can't Feel My Face`,
+    `Kanye West, Stronger`,
+    `Nicki Minaj, Starships`,
+    `Kendrick Lamar, Humble`
+];
+
+
+ourApp.assignSong = function(quizData) {
+    if (quizData >= 4 && quizData <=6) {
+        const songChoice = Math.floor(Math.random() * popSongs.length);
+        console.log(popSongs[songChoice]);
+        // choose pop song
+    } else if (quizData >= 7 && quizData <= 10){
+        // choose rock song
+    } else if (quizData >= 11 && quizData <= 13) {
+        // choose hiphop
+    } else if (quizData >= 14 && quizData <= 16) {
+        // choose classic
+    }
 }
 
-// ourApp.getAnswer();
+// function getSong(artist, title) {
+//     return $.ajax({
+//         url: 'https://proxy.hackeryou.com',
+//         method: 'GET',
+//         dataType: 'json',
+//         data: {
+//             reqUrl: 'http://api.musixmatch.com/ws/1.1/matcher.lyrics.get',
+//             params: {
+//                 apikey: '9bb3f51d28bc48a3b736688321570c4a',
+//                 f_has_lyrics: true,
+//                 q_artist: artist,
+//                 q_track: title
+//             }
+//         }
+//     })
+//         .then((res) => {
+//             let lyrics = res.message.body.lyrics.lyrics_body;
+//             console.log(lyrics);
+//             function chooseSong() {
+//                 $('.song-words').text(`${lyrics}`)
+//             }
+//             chooseSong();
+//         });
+// }
+
+
+
+
+
 
 $(function(){
     ourApp.getAnswer();
 });
-
-
-
-
-// var sum = [0, 1, 2, 3].reduce(function (a, b) {
-//     return a + b;
-// }, 0);
-// // sum is 6
-
-
-        // ``$(function () {
-        //     $('#clickMe').click(function (e) {
-        //         e.preventDefault();
-        //         firstAnswer = $('input[name=question]:checked').val();
-        //         //store values somewhere
-        //         console.log(firstAnswer);
-        //         questionScores.push($('firstAnswer').val());
-        //         console.log(questionScores);
-
-        //     })
-        //     let questionScores = [];
-        //     // let questionOneScore = 0;
-        //     //    let questionTwoScore = 0;
-        //     //    let questionThreeScore = 0;
-        // }) ``
-
 
