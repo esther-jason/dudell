@@ -1,9 +1,23 @@
-.quiz label {
-  border: 1px solid black; }
+header {
+  min-height: 50vh;
+  background-color: blue; }
 
-.song-words {
-  font-size: 24px;
-  width: 425px; }
+h1 {
+  font-family: 'Amaranth'; }
+
+h3 {
+  font-family: 'Crimson Text'; }
+
+.quiz input {
+  display: none; }
+
+.quiz label {
+  cursor: pointer;
+  font-family: 'Crimson Text';
+  border: 1px solid blue;
+  width: 100%;
+  height: 100px;
+  display: inline-block; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
@@ -139,10 +153,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+h1, h3 {
+  margin: 0; }
+
+body {
+  background: blue; }
+
 .wrapper {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto; }
-
-p {
-  font-family: 'Quantico', sans-serif; }
+  margin: 0 auto;
+  background: orange; }
