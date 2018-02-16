@@ -137,7 +137,7 @@ ourApp.getSong = (songChoice) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
             console.log(lyrics);
             function chooseSong() {
-                $('.song-choice p').text(`${lyrics}`);
+                $('.song-choice ').text(`${lyrics}`);
                 $('.song-choice h2').append(`${songArray}`)
                 console.log(songArray)
             }
@@ -145,7 +145,6 @@ ourApp.getSong = (songChoice) => {
             console.log(res);
         })
 }
-
 
 ourApp.getDrink = (drinkQuery) => {
     // const newDrink = drinkChoice;
@@ -175,7 +174,5 @@ ourApp.getDrink = (drinkQuery) => {
 
 $(function () {
     ourApp.getAnswer();
-    
-    // ourApp.getDrink();
-    // getSong();
+
 });
