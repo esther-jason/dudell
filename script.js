@@ -87,11 +87,7 @@ ourApp.assignSong = function (quizData) {
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         // console.log(rockSongs[songChoice]);
         songTitle = rockSongs[songChoice]
-<<<<<<< HEAD
         drinkChoice = 'whisky'
-=======
-        drinkChoice ='whisky'
->>>>>>> dd3fbd7799fd268284caddf701102f982b22db6c
 
         // getSong(songTitle);
 
