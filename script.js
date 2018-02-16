@@ -4,8 +4,8 @@ const ourApp = {}
 
 // ourApp.quizResultVal = 0; 
 
-ourApp.getAnswer = function() {    
-    $('.buttonOne').on('click', function(e) {
+ourApp.getAnswer = function () {
+    $('.buttonOne').on('click', function (e) {
         e.preventDefault();
         //gets value from input from user
         ourApp.questionOneVal = $('input[name=answerOne]:checked').val();
@@ -22,9 +22,9 @@ ourApp.getAnswer = function() {
         const answerArray = [];
         //pushes all the input data into an array
         answerArray.push(answerOneInt, answerTwoInt, answerThreeInt, answerFourInt);
-        
+
         // add the integers in the array together using the reduce method.
-        const quizResultVal = answerArray.reduce(function(a,b) {
+        const quizResultVal = answerArray.reduce(function (a, b) {
             return a + b
         }, 0);
 
@@ -69,21 +69,25 @@ const hiphopSongs = [
 ];
 
 
-ourApp.assignSong = function(quizData) {
+ourApp.assignSong = function (quizData) {
 
     let songTitle;
+    let drinkChoice;
 
-    if (quizData >= 4 && quizData <=6) {
+    if (quizData >= 4 && quizData <= 6) {
         const songChoice = Math.floor(Math.random() * popSongs.length);
         console.log(popSongs[songChoice]);
-        songTitle = popSongs[songChoice]
+        songTitle = popSongs[songChoice];
+        drinkChoice = 'vodka'
+
         // getSong(songTitle);
 
         // choose pop song
-    } else if (quizData >= 7 && quizData <= 10){
+    } else if (quizData >= 7 && quizData <= 10) {
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         // console.log(rockSongs[songChoice]);
         songTitle = rockSongs[songChoice]
+        drinkChoice = 'whisky'
 
         // getSong(songTitle);
 
@@ -92,6 +96,7 @@ ourApp.assignSong = function(quizData) {
         const songChoice = Math.floor(Math.random() * hiphopSongs.length);
         // console.log(hiphopSongs[songChoice]);
         songTitle = hiphopSongs[songChoice]
+        drinkChoice = 'champagne'
         // getSong(songTitle);
 
         // choose hiphop
@@ -99,11 +104,13 @@ ourApp.assignSong = function(quizData) {
         const songChoice = Math.floor(Math.random() * classicSongs.length);
         // console.log(classicSongs[songChoice]);
         songTitle = classicSongs[songChoice]
+        drinkChoice = 'beer'
         // choose classic
         // getSong(songTitle);
     }
 
-    ourApp.getSong(songTitle)
+    ourApp.getSong(songTitle);
+    ourApp.getDrink(drinkChoice);
 
 }
 
@@ -135,13 +142,35 @@ ourApp.getSong = (songChoice) => {
             chooseSong();
             console.log(res);
         });
-}   
+}
 
 
 
+ourApp.getDrink = (blah) => {
+    // const newDrink = drinkChoice;
+    // console.log(drinkChoice)
+    return $.ajax({
+        url: 'http://lcboapi.com/products',
+        access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
+        method: 'GET',
+        dataType: 'jsonp',
+        data: {
+            q: blah
+        }
+    })
+        .then((res) => {
+            // console.log(res.result)
+            let drinks = res.result;
+            let randomDrinkValue = Math.floor(Math.random() * 10);
+            const drinkNumber = drinks[randomDrinkValue].name;
+            $('.drink-choice').text(drinkNumber)
+        });
+}
 
-$(function(){
+
+
+$(function () {
     ourApp.getAnswer();
+    // ourApp.getDrink();
     // getSong();
 });
-

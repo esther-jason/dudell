@@ -4,64 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Perfec Pitcher</title>
+    <title>Project 3</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
 </head>
 <body>
-    <h1>The Perfect Pitcher</h1>
+    <header>
+        <h1>Karaoke and Booze</h1>
 
-        <form action="" class="quiz">
-            <h3>Question 1</h3>
-            <label for="answerOne">Answer 1</label>
-            <input type="radio" name="answerOne" value=1>
-            <label for="answerTwo">Answer 2</label>
-            <input type="radio" name="answerOne" value=2>
-            <label for="answerThree">Answer 3</label>
-            <input type="radio" name="answerOne" value=3>
-            <label for="answerFour">Answer 4</label>
-            <input type="radio" name="answerOne" value=4>
-        </form>
-        
-        <form action="" class="quiz">
-            <h3>Question 2</h3>
-            <label for="answerOne">Answer 1</label>
-            <input type="radio" name="answerTwo" value=1>
-            <label for="answerTwo">Answer 2</label>
-            <input type="radio" name="answerTwo" value=2>
-            <label for="answerThree">Answer 3</label>
-            <input type="radio" name="answerTwo" value=3>
-            <label for="answerFour">Answer 4</label>
-            <input type="radio" name="answerTwo" value=4>
-        </form>
-        
-        <form action="" class="quiz">
-            <h3>Question 3</h3>
-            <label for="answerOne">Answer 1</label>
-            <input type="radio" name="answerThree" value=1>
-            <label for="answerTwo">Answer 2</label>
-            <input type="radio" name="answerThree" value=2>
-            <label for="answerThree">Answer 3</label>
-            <input type="radio" name="answerThree" value=3>
-            <label for="answerFour">Answer 4</label>
-            <input type="radio" name="answerThree" value=4>
-        </form>
-        
-        <form action="" class="quiz">
-            <h3>Question 4</h3>
-            <label for="answerOne">Answer 1</label>
-            <input type="radio" name="answerFour" value=1>
-            <label for="answerTwo">Answer 2</label>
-            <input type="radio" name="answerFour" value=2>
-            <label for="answerThree">Answer 3</label>
-            <input type="radio" name="answerFour" value=3>
-            <label for="answerFour">Answer 4</label>
-            <input type="radio" name="answerFour" value=4>
-        </form>
-       
-        <button class="buttonOne">Click</button>
+    </header>
 
-        <p class="song-words">
+    <main>
+        <div class="wrapper">
+            
+                <form action="form" class="quiz">
+                        <!-- QUESTION ONE -->
+                    <h3>What does your ideal Friday night look like?</h3>
+                    <input type="radio" name="answerOne" value=1 id="fridayOne">
+                    <label for="fridayOne">Hanging out with my best friends dancing the night away!</label>
+        
+                    <input type="radio" name="answerOne" value=2 id="fridayTwo">
+                    <label for="fridayTwo">Seeing my favourite band at a cool bar</label>
+                    
+                    <input type="radio" name="answerOne" value=3 id="fridayThree">
+                    <label for="fridayThree">Staying home and watching old movies</label>
+                    
+                    <input type="radio" name="answerOne" value=4 id="fridayFour">
+                    <label for="fridayFour">Doing shots with my friends at the best new club</label>
+        
+                        <!-- QUESTION TWO -->
+                    <h3>What animal do you most identify with?</h3>
+                    <input type="radio" name="answerTwo" value=1 id="animalOne">
+                    <label for="animalOne">A Kitten</label>
+                
+                    <input type="radio" name="answerTwo" value=2 id="animalTwo">
+                    <label for="animalTwo">A Crow</label>
+        
+                    <input type="radio" name="answerTwo" value=3 id="animalThree">
+                    <label for="animalThree">An Owl</label>
+        
+                    <input type="radio" name="answerTwo" value=4 id="animalFour"> 
+                    <label for="animalFour">A Lion</label>
+        
+                    <!-- QUESTION THREE -->
+                    <h3>You’re getting a tattoo but you can only pick one of the following quotes. Which do you choose?</h3>
+                    <input type="radio" name="answerThree" value=1 id="tattooOne">
+                    <label for="tattooOne">“I was born this way” - Lady Gaga</label>
+        
+                    <input type="radio" name="answerThree" value=2 id="tattooTwo">
+                    <label for="tattooTwo">“For a minute there, I lost myself” - Radiohead</label>
+        
+                    <input type="radio" name="answerThree" value=3 id="tattooThree">
+                    <label for="tattooThree">“Thunder only happens when it’s raining” - Fleetwood Mac</label>
+        
+                    <input type="radio" name="answerThree" value=4 id="tattooFour">
+                    <label for="tattooFour">"But I'm a champion, so I turned tragedy to triumph" - Kanye West</label>
+                
+                    <!-- QUESTION FOUR -->
+                    <h3>You’re trapped a deserted island and you see a box floating in the water that contains one item of clothing. What do you hope is inside?</h3>
+        
+                    <input type="radio" name="answerFour" value=1 id="islandOne">
+                    <label for="islandOne">A pair of black yoga pants</label>
+                    
+                    <input type="radio" name="answerFour" value=2 id="islandTwo">
+                    <label for="islandTwo">A good hoodie</label>
+                   
+                    <input type="radio" name="answerFour" value=3 id="islandThree">
+                    <label for="islandThree">A soft crew neck t-shirt</label>
+                   
+                    <input type="radio" name="answerFour" value=4 id="islandFour">
+                    <label for="islandFour">A new pair of shoes</label>
+                </form>
+               
+                <button class="buttonOne">Click</button>
+        
+                <p class="song-words">
+                
+                    <div class="drink-choice">
+                        
+                    </div>
+        
+                </p>
+        </div>
+    </main>
+    <footer>
 
-        </p>
+
+    </footer>
         
         <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
         <script src="script.js"></script>
