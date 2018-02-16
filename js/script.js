@@ -1,9 +1,5 @@
 const ourApp = {}
-
-
-
 // ourApp.quizResultVal = 0; 
-
 ourApp.getAnswer = function () {
     $('.buttonOne').on('click', function (e) {
         e.preventDefault();
@@ -12,29 +8,22 @@ ourApp.getAnswer = function () {
         ourApp.questionTwoVal = $('input[name=answerTwo]:checked').val();
         ourApp.questionThreeVal = $('input[name=answerThree]:checked').val();
         ourApp.questionFourVal = $('input[name=answerFour]:checked').val();
-
         //converts the "string" data that we get from the input. and convert it to integer
         const answerOneInt = parseInt(ourApp.questionOneVal);
         const answerTwoInt = parseInt(ourApp.questionTwoVal);
         const answerThreeInt = parseInt(ourApp.questionThreeVal);
         const answerFourInt = parseInt(ourApp.questionFourVal);
-
         const answerArray = [];
         //pushes all the input data into an array
         answerArray.push(answerOneInt, answerTwoInt, answerThreeInt, answerFourInt);
-
         // add the integers in the array together using the reduce method.
         const quizResultVal = answerArray.reduce(function (a, b) {
             return a + b
         }, 0);
-
         // console.log(quizResultVal)
         ourApp.assignSong(quizResultVal);
-
     });
 }
-
-
 const popSongs = [
     // `q_artist=Justin Timberlake&q_track=SexyBack`
     `Beyonce, Crazy in Love`,
@@ -43,7 +32,6 @@ const popSongs = [
     `Justin Bieber, Sorry`,
     `Ariana Grande, One Last Time`
 ];
-
 const rockSongs = [
     `Blink 182, All the Small Things`,
     `Green Day, Time of Your Life`,
@@ -52,14 +40,12 @@ const rockSongs = [
     `Mumford and Sons, I Will Wait`,
     `Nirvana, Teen Spirit`
 ];
-
 const classicSongs = [
     `The Beatles, Hey Jude`,
     `Journey, Don't Stop Believin`,
     `Heart, Barracuda`,
     `David Bowie, Changes`
 ];
-
 const hiphopSongs = [
     `Drake, Hotline Bling`,
     `Weeknd, Can't Feel My Face`,
@@ -67,30 +53,22 @@ const hiphopSongs = [
     `Nicki Minaj, Starships`,
     `Kendrick Lamar, Humble`
 ];
-
-
 ourApp.assignSong = function (quizData) {
-
     let songTitle;
     let drinkChoice;
-
     if (quizData >= 4 && quizData <= 6) {
         const songChoice = Math.floor(Math.random() * popSongs.length);
         console.log(popSongs[songChoice]);
         songTitle = popSongs[songChoice];
         drinkChoice = 'vodka'
-
         // getSong(songTitle);
-
         // choose pop song
     } else if (quizData >= 7 && quizData <= 10) {
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         // console.log(rockSongs[songChoice]);
         songTitle = rockSongs[songChoice]
         drinkChoice = 'whisky'
-
         // getSong(songTitle);
-
         // choose rock song
     } else if (quizData >= 11 && quizData <= 13) {
         const songChoice = Math.floor(Math.random() * hiphopSongs.length);
@@ -98,7 +76,6 @@ ourApp.assignSong = function (quizData) {
         songTitle = hiphopSongs[songChoice]
         drinkChoice = 'champagne'
         // getSong(songTitle);
-
         // choose hiphop
     } else if (quizData >= 14 && quizData <= 16) {
         const songChoice = Math.floor(Math.random() * classicSongs.length);
@@ -108,17 +85,12 @@ ourApp.assignSong = function (quizData) {
         // choose classic
         // getSong(songTitle);
     }
-
     ourApp.getSong(songTitle);
     ourApp.getDrink(drinkChoice);
-
 }
-
 ourApp.getSong = (songChoice) => {
     // console.log(songChoice.split(','));
     const songArray = songChoice.split(',')
-
-
     return $.ajax({
         url: 'https://proxy.hackeryou.com',
         method: 'GET',
@@ -136,16 +108,15 @@ ourApp.getSong = (songChoice) => {
         .then((res) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
             console.log(lyrics);
-            function chooseSong() {
-                $('.song-choice ').text(`${lyrics}`);
-                $('.song-choice h2').append(`${songArray}`)
+            // function chooseSong() {
+                $('.song-choice').html(`<h2 class="songHeading">${songArray}<h2>`)
+                $('.song-choice').append(`<p class="songsWords">${lyrics}</p>`);
                 console.log(songArray)
-            }
-            chooseSong();
+            // }
+            // chooseSong();
             console.log(res);
         })
 }
-
 ourApp.getDrink = (drinkQuery) => {
     // const newDrink = drinkChoice;
     // console.log(drinkChoice)
@@ -170,9 +141,15 @@ ourApp.getDrink = (drinkQuery) => {
         });
 }
 
-
+ourApp.showLyrics = function(){
+    $('.song-choice').on('click', function(e){
+        e.preventDefault();
+        console.log('click');
+        $('.songsWords').show();
+    })
+}
 
 $(function () {
     ourApp.getAnswer();
-
+    ourApp.showLyrics();
 });
