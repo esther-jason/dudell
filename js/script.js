@@ -165,7 +165,7 @@ ourApp.getDrink = (blah) => {
             let drinks = res.result;
             let randomDrinkValue = Math.floor(Math.random() * 10);
             const drinkNumber = drinks[randomDrinkValue].name;
-            $('.drink-choice').text(drinkNumber)
+            $('.drink-choice').text(drinkNumber);
         });
 }
 
