@@ -1,4 +1,25 @@
-.song-words {
-    font-size: 24px;
-    width:425px;
+
+h1 {
+    font-family:'Amaranth';
 }
+
+h3 {
+    font-family:'Crimson Text';
+}
+.quiz {
+    input {
+        display:none;
+    };
+    label {
+        cursor: pointer;
+        font-family:'Crimson Text';
+        border:1px solid blue;
+        // padding:0 25px;
+        width:100%;
+        // max-width:250px;
+        height:100px;
+        display:inline-block;
+
+    };
+}
+
