@@ -170,7 +170,7 @@ ourApp.getDrink = (blah) => {
 }
 
 
-ourApp.getDrink = (blah) => {
+ourApp.getDrink = (drinkQuery) => {
     // const newDrink = drinkChoice;
     // console.log(drinkChoice)
     return $.ajax({
@@ -179,15 +179,18 @@ ourApp.getDrink = (blah) => {
         method: 'GET',
         dataType: 'jsonp',
         data: {
-            q: blah
+            q: drinkQuery
         }
     })
         .then((res) => {
             // console.log(res.result)
             let drinks = res.result;
             let randomDrinkValue = Math.floor(Math.random() * 10);
-            const drinkNumber = drinks[randomDrinkValue].name;
-            $('.drink-choice').text(drinkNumber)
+            const drinkName = drinks[randomDrinkValue].name;
+            const drinkImg = drinks[randomDrinkValue].image_thumb_url;
+            $('.drink-choice').text(drinkName);
+            $('.drink-choice').append(`<img src=${drinkImg}>`);
+            console.log(drinks)
         });
 }
 
@@ -195,6 +198,7 @@ ourApp.getDrink = (blah) => {
 
 $(function () {
     ourApp.getAnswer();
+    
     // ourApp.getDrink();
     // getSong();
 });
