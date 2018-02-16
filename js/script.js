@@ -116,7 +116,7 @@ ourApp.assignSong = function (quizData) {
 
 ourApp.getSong = (songChoice) => {
     // console.log(songChoice.split(','));
-    const newArray = songChoice.split(',')
+    const songArray = songChoice.split(',')
 
 
     return $.ajax({
@@ -128,8 +128,8 @@ ourApp.getSong = (songChoice) => {
             params: {
                 apikey: '9bb3f51d28bc48a3b736688321570c4a',
                 f_has_lyrics: true,
-                q_artist: newArray[0],
-                q_track: newArray[1]
+                q_artist: songArray[0],
+                q_track: songArray[1]
             }
         }
     })
@@ -137,36 +137,13 @@ ourApp.getSong = (songChoice) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
             console.log(lyrics);
             function chooseSong() {
-                $('.song-words').text(`${lyrics}`);
-                $('.song-words').append(`${newArray}`)
-                console.log(newArray)
+                $('.song-choice p').text(`${lyrics}`);
+                $('.song-choice h2').append(`${songArray}`)
+                console.log(songArray)
             }
             chooseSong();
             console.log(res);
-        });
-}
-
-
-
-ourApp.getDrink = (blah) => {
-    // const newDrink = drinkChoice;
-    // console.log(drinkChoice)
-    return $.ajax({
-        url: 'http://lcboapi.com/products',
-        access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
-        method: 'GET',
-        dataType: 'jsonp',
-        data: {
-            q: blah
-        }
-    })
-        .then((res) => {
-            // console.log(res.result)
-            let drinks = res.result;
-            let randomDrinkValue = Math.floor(Math.random() * 10);
-            const drinkNumber = drinks[randomDrinkValue].name;
-            $('.drink-choice').text(drinkNumber)
-        });
+        })
 }
 
 
@@ -188,7 +165,7 @@ ourApp.getDrink = (drinkQuery) => {
             let randomDrinkValue = Math.floor(Math.random() * 10);
             const drinkName = drinks[randomDrinkValue].name;
             const drinkImg = drinks[randomDrinkValue].image_thumb_url;
-            $('.drink-choice').text(drinkName);
+            $('.drink-choice h2').text(drinkName);
             $('.drink-choice').append(`<img src=${drinkImg}>`);
             console.log(drinks)
         });
