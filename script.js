@@ -87,7 +87,11 @@ ourApp.assignSong = function (quizData) {
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         // console.log(rockSongs[songChoice]);
         songTitle = rockSongs[songChoice]
+<<<<<<< HEAD
         drinkChoice = 'whisky'
+=======
+        drinkChoice ='whisky'
+>>>>>>> dd3fbd7799fd268284caddf701102f982b22db6c
 
         // getSong(songTitle);
 
@@ -137,13 +141,37 @@ ourApp.getSong = (songChoice) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
             console.log(lyrics);
             function chooseSong() {
-                $('.song-words').text(`${lyrics}`)
+                $('.song-words').text(`${lyrics}`);
+                $('.song-words').append(`${newArray}`)
+                console.log(newArray)
             }
             chooseSong();
             console.log(res);
         });
 }
 
+
+
+ourApp.getDrink = (blah) => {
+    // const newDrink = drinkChoice;
+    // console.log(drinkChoice)
+    return $.ajax({
+        url: 'http://lcboapi.com/products',
+        access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
+        method: 'GET',
+        dataType: 'jsonp',
+        data: {
+            q: blah
+        }
+    })
+        .then((res) => {
+            // console.log(res.result)
+            let drinks = res.result;
+            let randomDrinkValue = Math.floor(Math.random() * 10);
+            const drinkNumber = drinks[randomDrinkValue].name;
+            $('.drink-choice').text(drinkNumber)
+        });
+}
 
 
 ourApp.getDrink = (blah) => {
