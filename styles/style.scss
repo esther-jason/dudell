@@ -1,14 +1,21 @@
 
+
 @import 'header.scss';
 @import 'main.scss';
 @import 'normalize.scss';
+
 h1, h3 {
     margin:0;
 }
 
+body {
+    background:black;
+}
 .wrapper {
     max-width:1200px;
     width:100%;
+    // border:1px solid blue;
+    // background: blue;
     margin:0 auto;
 }
 
