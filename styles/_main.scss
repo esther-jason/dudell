@@ -62,12 +62,11 @@ h3 {
     };
 }
 
+
 input[type="radio"]:checked+label{ 
     // background:blue; 
      box-shadow: 0 0 8px rgba(255,255,86,0.7) , 0 0 9px #ff00de , 0 0 10px rgba(255,255,255,1) , 0 0 10px rgba(255,255,255,1) , 0 0 20px #ff00de,  0 0 35px #ff00de;
 } 
-
-
 
 .quiz div {
     // display:flex;
@@ -76,5 +75,36 @@ input[type="radio"]:checked+label{
 .quiz-questions {  
     display:grid;
     grid-template-columns: 1fr 1fr;
+}
+
+
+.quiz-results {
+    background: black;
+    color: white;
+    display: none;
+    h2 {
+    font-family:'Lato';
+    font-weight:300;
+    text-shadow: 0px 0px 7px rgb(212, 210, 130);
+    text-align:center;
+    text-transform:uppercase;
+    }
+}
+// .song-choice::after {
+//     content: "+";
+//     text-align: center;
+//     color: white;
+// }
+
+.songsWords {
+    display:none;
+}
+
+.drink-choice {
+    text-align: center;
+    img {
+        width: 250px;
+        margin: 0 auto;
+    }
 }
 
