@@ -1,7 +1,7 @@
 const ourApp = {}
 // ourApp.quizResultVal = 0; 
 ourApp.getAnswer = function () {
-    $('.buttonOne').on('click', function (e) {
+    $('.getResults').on('click', function (e) {
         e.preventDefault();
         //gets value from input from user
         ourApp.questionOneVal = $('input[name=answerOne]:checked').val();
@@ -20,6 +20,8 @@ ourApp.getAnswer = function () {
         const quizResultVal = answerArray.reduce(function (a, b) {
             return a + b
         }, 0);
+
+        $('.quiz-results').fadeIn('slow');
         // console.log(quizResultVal)
         ourApp.assignSong(quizResultVal);
     });
@@ -107,11 +109,12 @@ ourApp.getSong = (songChoice) => {
     })
         .then((res) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
-            console.log(lyrics);
+            // console.log(lyrics);
+            console.log(res.message.body)
             // function chooseSong() {
-                $('.song-choice').html(`<h2 class="songHeading">${songArray}<h2>`)
+                $('.song-choice').html(`<h2 class="songHeading">${songArray}</h2>`);
                 $('.song-choice').append(`<p class="songsWords">${lyrics}</p>`);
-                console.log(songArray)
+                // console.log(songArray)
             // }
             // chooseSong();
             console.log(res);
@@ -134,8 +137,8 @@ ourApp.getDrink = (drinkQuery) => {
             let drinks = res.result;
             let randomDrinkValue = Math.floor(Math.random() * 10);
             const drinkName = drinks[randomDrinkValue].name;
-            const drinkImg = drinks[randomDrinkValue].image_thumb_url;
-            $('.drink-choice h2').text(drinkName);
+            const drinkImg = drinks[randomDrinkValue].image_url;
+            $('.drink-choice').html(`<h2>${drinkName}</h2>`);
             $('.drink-choice').append(`<img src=${drinkImg}>`);
             console.log(drinks)
         });
