@@ -16,6 +16,10 @@ h1 {
   padding-top: 10%;
   letter-spacing: 3px; }
 
+.effect {
+  -webkit-animation: flicker 5s infinite;
+  animation: flicker 5s infinite; }
+
 @-webkit-keyframes flicker {
   0% {
     opacity: 0.5; }
@@ -86,11 +90,13 @@ input[type="radio"]:checked + label {
 .quiz-results {
   width: 50%;
   height: 50%;
-  margin: 0 auto;
+  margin: 10% auto;
   position: relative;
   background: black;
   color: white;
-  display: none; }
+  display: none;
+  -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
+  box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
   .quiz-results h2 {
     font-family: 'Lato';
     font-weight: 300;

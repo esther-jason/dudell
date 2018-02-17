@@ -21,7 +21,7 @@ ourApp.getAnswer = function () {
             return a + b
         }, 0);
 
-        $('.quiz-results').fadeIn('slow');
+        $('.quiz-results').fadeIn(1000);
         // console.log(quizResultVal)
         ourApp.assignSong(quizResultVal);
     });
