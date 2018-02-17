@@ -1,6 +1,5 @@
 header {
-  min-height: 50vh;
-  background: black; }
+  min-height: 50vh; }
 
 .song-lyrics {
   font-size: 24px;
@@ -257,6 +256,9 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto; }
+
+.songsWords {
+  display: none; }
 
 h1 {
   font-size: 60px;
