@@ -211,7 +211,8 @@ p.clickHere {
   text-align: center; }
   .drink-choice img {
     border-radius: 5px;
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
     margin: 0 auto;
     -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
     box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
@@ -411,6 +412,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     align-items: center; }
   .quizFirstQ label {
     padding-top: 30px; }
+  .quiz-results {
+    margin-top: 200px; }
   .quizThirdQ label {
     padding-top: 30px; }
   .quizFourthQ label {
@@ -423,9 +426,23 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   a {
     display: none; }
   .quiz button {
-    margin-top: 25px; }
+    margin-top: 25px; } }
+
+@media (max-width: 360px) {
+  header p {
+    padding: 40px 15px;
+    font-size: 18px; }
+  .quizFirstQ, .quizSecondQ, .quizThirdQ, .quizFourthQ {
+    height: 100%; }
+  .quizThirdQ label {
+    padding-top: 15px; }
   .quiz-results {
-    margin: 20% auto; } }
+    margin-top: 100px; }
+  .restart button {
+    font-size: 14px;
+    padding: 0 20px; }
+  img {
+    width: 100%; } }
 
 h1, h3 {
   margin: 0; }
