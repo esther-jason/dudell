@@ -87,10 +87,10 @@ input[type="radio"]:checked + label {
   grid-template-columns: 1fr 1fr; }
 
 .quiz-results {
-  width: 50%;
+  width: 75%;
   height: 50%;
   margin: 10% auto;
-  position: relative;
+  padding: 5%;
   background: black;
   color: white;
   display: none;
@@ -103,14 +103,40 @@ input[type="radio"]:checked + label {
     text-align: center;
     text-transform: uppercase; }
 
+.getResults {
+  background: black;
+  color: white;
+  font-family: 'Lato';
+  font-weight: 300;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 5%;
+  text-shadow: 0px 0px 7px #d4d282;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
+  box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
+
 .songsWords {
-  display: none; }
+  display: none;
+  font-family: Lato; }
+
+.song-choice h2,
+.drink-choice h2 {
+  font-family: 'Lato';
+  font-weight: 300;
+  text-shadow: 0px 0px 7px #d4d282;
+  text-align: center;
+  text-transform: uppercase;
+  color: white; }
 
 .drink-choice {
   text-align: center; }
   .drink-choice img {
     width: 250px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
+    box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
@@ -256,9 +282,6 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto; }
-
-.songsWords {
-  display: none; }
 
 h1 {
   font-size: 60px;

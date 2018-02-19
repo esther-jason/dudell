@@ -21,7 +21,10 @@ ourApp.getAnswer = function () {
             return a + b
         }, 0);
 
-        $('.quiz-results').fadeIn(1000);
+        $('.quiz-results').fadeIn(1000)
+        $('html, body').animate({
+            scrollTop: $('.quiz-results').offset().top
+        });
         // console.log(quizResultVal)
         ourApp.assignSong(quizResultVal);
     });
@@ -148,7 +151,7 @@ ourApp.showLyrics = function(){
     $('.song-choice').on('click', function(e){
         e.preventDefault();
         console.log('click');
-        $('.songsWords').show();
+        $('.songsWords').slideDown('slow');
     })
 }
 
