@@ -412,6 +412,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     align-items: center; }
   .quizFirstQ label {
     padding-top: 30px; }
+  .quiz-results {
+    margin-top: 200px; }
   .quizThirdQ label {
     padding-top: 30px; }
   .quizFourthQ label {
