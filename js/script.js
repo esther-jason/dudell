@@ -1,5 +1,7 @@
+// empty object to place our whole app in
 const ourApp = {}
-// ourApp.quizResultVal = 0; 
+
+// function to get the answer from quiz
 ourApp.getAnswer = function () {
     $('.getResults').on('click', function (e) {
         e.preventDefault();
@@ -25,7 +27,6 @@ ourApp.getAnswer = function () {
         $('html, body').animate({
             scrollTop: $('.quiz-results').offset().top
         });
-        // console.log(quizResultVal)
         ourApp.assignSong(quizResultVal);
     });
 }
@@ -83,35 +84,28 @@ ourApp.assignSong = function (quizData) {
         console.log(popSongs[songChoice]);
         songTitle = popSongs[songChoice];
         drinkChoice = 'vodka'
-        // getSong(songTitle);
         // choose pop song
     } else if (quizData >= 7 && quizData <= 10) {
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         // console.log(rockSongs[songChoice]);
         songTitle = rockSongs[songChoice]
         drinkChoice = 'whisky'
-        // getSong(songTitle);
         // choose rock song
     } else if (quizData >= 11 && quizData <= 13) {
         const songChoice = Math.floor(Math.random() * hiphopSongs.length);
-        // console.log(hiphopSongs[songChoice]);
         songTitle = hiphopSongs[songChoice]
         drinkChoice = 'champagne'
-        // getSong(songTitle);
         // choose hiphop
     } else if (quizData >= 14 && quizData <= 16) {
         const songChoice = Math.floor(Math.random() * classicSongs.length);
-        // console.log(classicSongs[songChoice]);
         songTitle = classicSongs[songChoice]
         drinkChoice = 'beer'
         // choose classic
-        // getSong(songTitle);
     }
     ourApp.getSong(songTitle);
     ourApp.getDrink(drinkChoice);
 }
 ourApp.getSong = (songChoice) => {
-    // console.log(songChoice.split(','));
     const songArray = songChoice.split(',')
     return $.ajax({
         url: 'https://proxy.hackeryou.com',
@@ -129,24 +123,16 @@ ourApp.getSong = (songChoice) => {
     })
         .then((res) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
-            // console.log(lyrics);
             console.log(res.message.body)
-            // function chooseSong() {
                 $('.song-choice').html(`<h2 class="songHeading">${songArray}</h2>`);
                 $('.song-choice').append(`<p class="clickHere">Click here for Lyrics</p>`);
                 $('.song-choice').append(`<p class="songsWords">${lyrics}</p>`);
-                // console.log(songArray)
-            // }
-            // chooseSong();
             console.log(res);
         })
 }
 ourApp.getDrink = (drinkQuery) => {
-    // const newDrink = drinkChoice;
-    // console.log(drinkChoice)
     return $.ajax({
         url: 'https://lcboapi.com/products',
-        // access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
         headers: {
             'Authorization': 'Token MDo2ZGFmODVkMC0xNWJhLTExZTgtOWEzOC1kMzJjYmY2MTVjZDU6Tng3aHdhY2xzalhWUnFhVkpBaXF2SXdEdmN3QzZ4Zk43RGZJ'
         },
@@ -157,7 +143,6 @@ ourApp.getDrink = (drinkQuery) => {
         }
     })
         .then((res) => {
-            // console.log(res.result)
             let drinks = res.result;
             let randomDrinkValue = Math.floor(Math.random() * 10);
             const drinkName = drinks[randomDrinkValue].name;
@@ -184,7 +169,6 @@ ourApp.showLiquor = function () {
         $('.showLiquor').slideDown('slow');
     })
 }
-
 ourApp.restartQuiz = function (){
     $('.restart').on('click', function(e) {
         location.reload();
@@ -193,10 +177,14 @@ ourApp.restartQuiz = function (){
     })
 }
 
-$(function () {
-    ourApp.getAnswer();
+ourApp.init = function (){
+   ourApp.getAnswer();
     ourApp.showLyrics();
     ourApp.showLiquor();
     ourApp.restartQuiz();
-    $("a").smoothScroll();
+    $("a").smoothScroll(); 
+}
+
+$(function () {
+    ourApp.init();
 });
