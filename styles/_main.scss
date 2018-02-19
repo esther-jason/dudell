@@ -9,9 +9,6 @@
     animation: flicker 4s infinite;
 }
 
-
-
-
 @keyframes flicker
 {
 0% {
@@ -199,8 +196,7 @@ p.clickHere{
         width: 250px;
         margin: 0 auto;
         box-shadow: 0 0 8px rgba(255,255,86,0.7) , 0 0 9px #ff00de , 0 0 10px rgba(255,255,255,1) , 0 0 10px rgba(255,255,255,1) , 0 0 20px #ff00de,  0 0 35px #ff00de;
-        display: none;
-        
+        display: none;  
     }
 }
 .and {
@@ -210,10 +206,7 @@ p.clickHere{
 footer {
     text-align: center;
     margin: 30px;
-    p {
-        padding: 0;
-    }
-    a{
+    p, a{
         color: white;
         text-decoration: none;
         text-shadow: 0px 0px 7px #d4d282;

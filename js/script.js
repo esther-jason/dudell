@@ -186,9 +186,7 @@ ourApp.restartQuiz = function (){
     $('.restart').on('click', function(e) {
         location.reload();
         $('html, body').scrollTop(0);
-        // $('html, body').animate({
-        //     scrollBottom: ('.top').offset().top
-        // });
+       
     })
 }
 
