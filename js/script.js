@@ -116,6 +116,7 @@ ourApp.getSong = (songChoice) => {
             console.log(res.message.body)
             // function chooseSong() {
                 $('.song-choice').html(`<h2 class="songHeading">${songArray}</h2>`);
+                $('.song-choice').append(`<p class="clickHere">Click here for Lyrics</p>`);
                 $('.song-choice').append(`<p class="songsWords">${lyrics}</p>`);
                 // console.log(songArray)
             // }
@@ -141,8 +142,10 @@ ourApp.getDrink = (drinkQuery) => {
             let randomDrinkValue = Math.floor(Math.random() * 10);
             const drinkName = drinks[randomDrinkValue].name;
             const drinkImg = drinks[randomDrinkValue].image_url;
-            $('.drink-choice').html(`<h2>${drinkName}</h2>`);
-            $('.drink-choice').append(`<img src=${drinkImg}>`);
+            $('.drink-choice').html(`<h2 class="and">&</h2>`)
+            $('.drink-choice').append(`<h2>${drinkName}</h2>`);
+            $('.drink-choice').append(`<p class="clickHere">Click for info</p>`);            
+            $('.drink-choice').append(`<img src=${drinkImg} class="showLiquor">`);
             console.log(drinks)
         });
 }
@@ -154,8 +157,27 @@ ourApp.showLyrics = function(){
         $('.songsWords').slideDown('slow');
     })
 }
+ourApp.showLiquor = function () {
+    $('.drink-choice').on('click', function (e) {
+        e.preventDefault();
+        console.log('click');
+        $('.showLiquor').slideDown('slow');
+    })
+}
+
+ourApp.restartQuiz = function (){
+    $('.restart').on('click', function(e) {
+        location.reload();
+        $('html, body').scrollTop(0);
+        // $('html, body').animate({
+        //     scrollBottom: ('.top').offset().top
+        // });
+    })
+}
 
 $(function () {
     ourApp.getAnswer();
     ourApp.showLyrics();
+    ourApp.showLiquor();
+    ourApp.restartQuiz();
 });

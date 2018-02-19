@@ -125,21 +125,6 @@ input[type="radio"]:checked + label {
     text-align: center;
     text-transform: uppercase; }
 
-
-.getResults {
-  background: black;
-  color: white;
-  font-family: 'Lato';
-  font-weight: 300;
-  border-radius: 5px;
-  margin: 0 auto;
-  padding: 5%;
-  text-shadow: 0px 0px 7px #d4d282;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
-  box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
-
 a .fa-arrow-down {
   color: white;
   font-size: 50px;
@@ -156,29 +141,37 @@ a .fa-arrow-down {
   a .fa-arrow-down:hover {
     top: 20%; }
 
-.quiz button {
+.quiz button,
+.restart button {
   font-size: 18px;
   border: 0px;
   font-family: 'Raleway';
   height: 50px;
-  padding: 0 65px;
+  padding: 0   65px;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 50px;
+  margin-top: 75px;
   margin-bottom: 50px;
   position: relative;
   left: 50%;
+  background: white;
+  text-transform: uppercase;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
-  .quiz button:hover {
+  .quiz button:hover,
+  .restart button:hover {
     -webkit-box-shadow: 0 0 9px rgba(255, 255, 86, 0.7), 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 20px white, 0 0 35px #ff00de;
     box-shadow: 0 0 9px rgba(255, 255, 86, 0.7), 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 20px white, 0 0 35px #ff00de; }
 
-
 .songsWords {
   display: none;
-  font-family: Lato; }
+  font-family: Lato;
+  line-height: 40px; }
+
+p.clickHere {
+  text-align: center;
+  padding: 0px; }
 
 .song-choice h2,
 .drink-choice h2 {
@@ -195,7 +188,24 @@ a .fa-arrow-down {
     width: 250px;
     margin: 0 auto;
     -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
-    box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
+    box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
+    display: none; }
+
+.and {
+  font-size: 36px; }
+
+footer {
+  text-align: center;
+  margin: 30px; }
+  footer p {
+    padding: 0; }
+  footer a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0px 0px 7px #d4d282;
+    text-align: center;
+    font-size: 14px;
+    margin: 10px; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
