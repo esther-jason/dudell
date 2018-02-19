@@ -148,7 +148,7 @@ ourApp.getDrink = (drinkQuery) => {
         url: 'https://lcboapi.com/products',
         // access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
         headers: {
-            'Authorization': 'Token MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0'
+            'Authorization': 'Token MDo2ZGFmODVkMC0xNWJhLTExZTgtOWEzOC1kMzJjYmY2MTVjZDU6Tng3aHdhY2xzalhWUnFhVkpBaXF2SXdEdmN3QzZ4Zk43RGZJ'
         },
         method: 'GET',
         dataType: 'json',
