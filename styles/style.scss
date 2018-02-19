@@ -3,13 +3,14 @@
 @import 'header.scss';
 @import 'main.scss';
 @import 'normalize.scss';
+@import 'responsive.scss';
 
 h1, h3 {
     margin:0;
 }
 
 body {
-    background:black;
+    background: linear-gradient(185deg, black 25%, #4d1bde,#D51448,#2886E0, black);
 }
 .wrapper {
     max-width:1200px;
@@ -22,4 +23,5 @@ body {
 h1 {
     font-size:60px;
     color:white;
+    opacity:1;
 }
