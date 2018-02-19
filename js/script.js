@@ -30,12 +30,16 @@ ourApp.getAnswer = function () {
     });
 }
 const popSongs = [
-    // `q_artist=Justin Timberlake&q_track=SexyBack`
+    `Justin Timberlake, SexyBack`,
     `Beyonce, Crazy in Love`,
     `Bruno Mars, 24K Magic`,
     `Ed Sheeran, Shape of You`,
     `Justin Bieber, Sorry`,
-    `Ariana Grande, One Last Time`
+    `Ariana Grande, One Last Time`, 
+    `Britney Spears, Womanizer`,
+    `Rihanna, Don't Stop the Music`,
+    `Katy Perry, Firework`,
+    `Lady Gaga, Bad Romance`
 ];
 const rockSongs = [
     `Blink 182, All the Small Things`,
@@ -43,20 +47,33 @@ const rockSongs = [
     `Jimmy Eat World, The Middle`,
     `No Doubt, Don't Speak`,
     `Mumford and Sons, I Will Wait`,
-    `Nirvana, Teen Spirit`
+    `Nirvana, Smell Like Teen Spirit`,
+    `Creed, With Arms Wide Open`,
+    `Foo Fighters, Learn to Fly`,
+    `Oasis, Wonderwall`,
+    `Aerosmith, I Don't Want to Miss a Thing`
+
 ];
 const classicSongs = [
     `The Beatles, Hey Jude`,
-    `Journey, Don't Stop Believin`,
     `Heart, Barracuda`,
-    `David Bowie, Changes`
+    `David Bowie, Changes`,
+    `The Rolling Stones, Paint it Black`,
+    `Boston, More Than a Feeling`,
+    `Jimi Hendrix, Purple Haze`,
+    `Prince, When Doves Cry`,
+    `Fleetwood Mac, Go Your Own Way`
 ];
 const hiphopSongs = [
     `Drake, Hotline Bling`,
     `Weeknd, Can't Feel My Face`,
     `Kanye West, Stronger`,
     `Nicki Minaj, Starships`,
-    `Kendrick Lamar, Humble`
+    `Kendrick Lamar, Humble`,
+    `Montell Jordan, This Is How We Do It`,
+    `Outkast, Hey Ya`,
+    `Eminem, Without Me`,
+    `Missy Elliott, Work It`    
 ];
 ourApp.assignSong = function (quizData) {
     let songTitle;
@@ -180,4 +197,5 @@ $(function () {
     ourApp.showLyrics();
     ourApp.showLiquor();
     ourApp.restartQuiz();
+    $("a").smoothScroll();
 });
