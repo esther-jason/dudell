@@ -145,10 +145,13 @@ ourApp.getDrink = (drinkQuery) => {
     // const newDrink = drinkChoice;
     // console.log(drinkChoice)
     return $.ajax({
-        url: 'http://lcboapi.com/products',
-        access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
+        url: 'https://lcboapi.com/products',
+        // access_key: 'MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0',
+        headers: {
+            'Authorization': 'Token MDozYzQ2ZTQ4NC0xMGY2LTExZTgtOTY2MS02ZmYyNmY0ZGEzMmQ6bmdrZlJaRURmQ3ZnRlZiZW5XZDZkRjRIV2R1eDhCc3VhOXh0'
+        },
         method: 'GET',
-        dataType: 'jsonp',
+        dataType: 'json',
         data: {
             q: drinkQuery
         }
