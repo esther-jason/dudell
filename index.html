@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project 3</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Raleway" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
     <header>
         <div class="wrapper">
             <h1>Karaoke and Boo<span class="effect">z</span>e</h1>
+            <p>Let us help you choose your best karaoke song and the best drink to give you some much needed liquid courage!</p>
         </div>
 
     </header>
@@ -23,6 +25,7 @@
                             <!-- QUESTION ONE -->
                 <div class="quizFirstQ">
                     <h3>What does your ideal Friday night look like?</h3>
+                    
                     <div class="quiz-questions">
                         <input type="radio" name="answerOne" value=1 id="fridayOne">
                         <label for="fridayOne">Hanging out with my best friends dancing the night away!</label>
@@ -36,29 +39,32 @@
                         <input type="radio" name="answerOne" value=4 id="fridayFour">
                         <label for="fridayFour">Doing shots with my friends at the best new club</label>
                     </div>
+                    <a href="#second"><i class="fas fa-arrow-down"></i></a>
                 </div>
             
                             <!-- QUESTION TWO -->
-                <div class="quizSecondQ">
+                <div class="quizSecondQ" id="second">
                     <h3>What animal do you most identify with?</h3>
                     <div class="quiz-questions">
                         <input type="radio" name="answerTwo" value=1 id="animalOne">
-                        <label for="animalOne">A Kitten</label>
+                        <label for="animalOne"><img src="assets/kitten.png" alt="a kitten"></label>
                     
                         <input type="radio" name="answerTwo" value=2 id="animalTwo">
-                        <label for="animalTwo">A Crow</label>
+                        <label for="animalTwo"><img src="assets/crow.png" alt="a crow"></label>
             
                         <input type="radio" name="answerTwo" value=3 id="animalThree">
-                        <label for="animalThree">An Owl</label>
+                        <label for="animalThree"><img src="assets/owl.png" alt="an owl"></label>
             
                         <input type="radio" name="answerTwo" value=4 id="animalFour"> 
-                        <label for="animalFour">A Lion</label>
+                        <label for="animalFour"><img src="assets/lion.png" alt="a lion"></label>
                     </div>
+                    <a href="#third"><i class="fas fa-arrow-down"></i></a>
                 </div>
             
                         <!-- QUESTION THREE -->
-                <div class="quizThirdQ">
+                <div class="quizThirdQ" id="third">
                     <h3>You’re getting a tattoo but you can only pick one of the following quotes. Which do you choose?</h3>
+                    
                     <div class="quiz-questions">
                         <input type="radio" name="answerThree" value=1 id="tattooOne">
                         <label for="tattooOne">“I was born this way” - Lady Gaga</label>
@@ -72,11 +78,12 @@
                         <input type="radio" name="answerThree" value=4 id="tattooFour">
                         <label for="tattooFour">"But I'm a champion, so I turned tragedy to triumph" - Kanye West</label>
                     </div>
+                    <a href="#fourth"><i class="fas fa-arrow-down"></i></a>
                 </div>
-                    
                         <!-- QUESTION FOUR -->
-                <div class="quizFourthQ">
+                <div class="quizFourthQ" id="fourth">
                     <h3>You’re trapped a deserted island and you see a box floating in the water that contains one item of clothing. What do you hope is inside?</h3>
+                    
         
                     <div class="quiz-questions">
                         <input type="radio" name="answerFour" value=1 id="islandOne">
@@ -90,9 +97,10 @@
                         
                         <input type="radio" name="answerFour" value=4 id="islandFour">
                         <label for="islandFour">A new pair of shoes</label>
+
                     </div>
+                    <button class="getResults">Ready to Sing?</button>
                 </div>
-                <button class="buttonOne">Click</button>
             </form>
         </section>
                
