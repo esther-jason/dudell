@@ -113,6 +113,23 @@ input[type="radio"]:checked + label {
   position: relative;
   margin: 0 15%; }
 
+
+.quiz-results {
+  width: 75%;
+  height: 50%;
+  margin: 10% auto;
+  padding: 5%;
+  background: black;
+  color: white;
+  display: none;
+  -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
+  box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
+  .quiz-results h2 {
+    font-family: 'Lato';
+    font-weight: 300;
+    text-shadow: 0px 0px 7px #d4d282;
+    text-align: center;
+    text-transform: uppercase; }
 h2 {
   font-family: 'Lato';
   font-weight: 300;
@@ -136,7 +153,8 @@ a .fa-arrow-down {
   a .fa-arrow-down:hover {
     margin-top: 115px; }
 
-.quiz button {
+.quiz button,
+.restart button {
   font-size: 18px;
   border: 0px;
   font-family: 'Raleway';
@@ -153,7 +171,8 @@ a .fa-arrow-down {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
-  .quiz button:hover {
+  .quiz button:hover,
+  .restart button:hover {
     -webkit-box-shadow: 0 0 9px rgba(255, 255, 86, 0.7), 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 20px white, 0 0 35px #ff00de;
     box-shadow: 0 0 9px rgba(255, 255, 86, 0.7), 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 20px white, 0 0 35px #ff00de; }
 
@@ -179,7 +198,12 @@ a .fa-arrow-down {
 
 .songsWords {
   display: none;
-  font-family: Lato; }
+  font-family: Lato;
+  line-height: 40px; }
+
+p.clickHere {
+  text-align: center;
+  padding: 0px; }
 
 .song-choice h2,
 .drink-choice h2 {
@@ -197,7 +221,24 @@ a .fa-arrow-down {
     width: 250px;
     margin: 0 auto;
     -webkit-box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
-    box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de; }
+    box-shadow: 0 0 8px rgba(255, 255, 86, 0.7), 0 0 9px #ff00de, 0 0 10px white, 0 0 10px white, 0 0 20px #ff00de, 0 0 35px #ff00de;
+    display: none; }
+
+.and {
+  font-size: 36px; }
+
+footer {
+  text-align: center;
+  margin: 30px; }
+  footer p {
+    padding: 0; }
+  footer a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0px 0px 7px #d4d282;
+    text-align: center;
+    font-size: 14px;
+    margin: 10px; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }

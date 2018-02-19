@@ -94,6 +94,24 @@ input[type="radio"]:checked+label{
     margin:0 15%;
 }
 
+.quiz-results {
+    width: 75%;
+    height: 50%;
+    margin: 10% auto;
+    // position: relative;
+    padding: 5%;
+    background: black;
+    color: white;
+    display: none;
+    box-shadow: 0 0 8px rgba(255,255,86,0.7) , 0 0 9px #ff00de , 0 0 10px rgba(255,255,255,1) , 0 0 10px rgba(255,255,255,1) , 0 0 20px #ff00de,  0 0 35px #ff00de;
+
+    h2 {
+    font-family:'Lato';
+    font-weight:300;
+    text-shadow: 0px 0px 7px rgb(212, 210, 130);
+    text-align:center;
+    text-transform:uppercase;
+    }
 
 h2 {
 font-family:'Lato';
@@ -116,7 +134,8 @@ a .fa-arrow-down {
         margin-top:115px;
     }
 }
-.quiz button {
+.quiz button,
+.restart button {
     font-size: 18px;
     border:0px;
     font-family:'Raleway';
@@ -157,17 +176,16 @@ a .fa-arrow-down {
         padding-top:45px;
     }
 }
-// .song-choice::after {
-//     content: "+";
-//     text-align: center;
-//     color: white;
-// }
-
 
 .songsWords {
     display:none;
     font-family: Lato;
+    line-height: 40px;
+}
 
+p.clickHere{
+    text-align: center;
+    padding: 0px;
 }
 
 .song-choice h2,
@@ -188,8 +206,27 @@ a .fa-arrow-down {
         width: 250px;
         margin: 0 auto;
         box-shadow: 0 0 8px rgba(255,255,86,0.7) , 0 0 9px #ff00de , 0 0 10px rgba(255,255,255,1) , 0 0 10px rgba(255,255,255,1) , 0 0 20px #ff00de,  0 0 35px #ff00de;
-
+        display: none;
         
     }
 }
+.and {
+    font-size: 36px;
+}
 
+footer {
+    text-align: center;
+    margin: 30px;
+    p {
+        padding: 0;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        text-shadow: 0px 0px 7px #d4d282;
+        text-align: center;
+        font-size: 14px;
+        margin: 10px;
+    }
+}
+    
