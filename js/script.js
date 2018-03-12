@@ -88,21 +88,33 @@ ourApp.assignSong = function (quizData) {
         console.log(popSongs[songChoice]);
         songTitle = popSongs[songChoice];
         drinkChoice = 'vodka'
+        // choose pop song
+
+
     } else if (quizData >= 7 && quizData <= 10) {
         // choose rock song
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         songTitle = rockSongs[songChoice]
         drinkChoice = 'whisky'
+
+        // choose rock song
+
     } else if (quizData >= 11 && quizData <= 13) {
         // choose hiphop
         const songChoice = Math.floor(Math.random() * hiphopSongs.length);
         songTitle = hiphopSongs[songChoice]
         drinkChoice = 'champagne'
+
+        // choose hiphop
+
     } else if (quizData >= 14 && quizData <= 16) {
         // choose classic
         const songChoice = Math.floor(Math.random() * classicSongs.length);
         songTitle = classicSongs[songChoice]
         drinkChoice = 'beer'
+
+        // choose classic
+
     }
     ourApp.getSong(songTitle);
     ourApp.getDrink(drinkChoice);
@@ -128,7 +140,7 @@ ourApp.getSong = (songChoice) => {
             let lyrics = res.message.body.lyrics.lyrics_body;
             console.log(res.message.body)
                 $('.song-choice').html(`<h2 class="songHeading">${songArray}</h2>`);
-                $('.song-choice').append(`<p class="clickHere">Click here for Lyrics</p>`);
+                $('.song-choice').append(`<button class="clickHere">Click here for Lyrics</button>`);
                 $('.song-choice').append(`<p class="songsWords">${lyrics}</p>`);
             console.log(res);
         })
@@ -154,7 +166,7 @@ ourApp.getDrink = (drinkQuery) => {
             const drinkImg = drinks[randomDrinkValue].image_url;
             $('.drink-choice').html(`<h2 class="and">&</h2>`)
             $('.drink-choice').append(`<h2>${drinkName}</h2>`);
-            $('.drink-choice').append(`<p class="clickHere">Click for info</p>`);            
+            $('.drink-choice').append(`<button class="clickHere">Click for info</button>`);            
             $('.drink-choice').append(`<img src=${drinkImg} class="showLiquor">`);
             console.log(drinks)
         });
@@ -185,6 +197,41 @@ ourApp.restartQuiz = function (){
     })
 }
 
+
+$("#first").click(function(){
+$("html, body").animate(
+  {
+    scrollTop: $("#second").offset().top
+  },
+  1000
+); 
+})
+
+$("#second").click(function() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#third").offset().top
+    },
+    1000
+  );
+});
+
+$("#third").click(function() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#fourth").offset().top
+    },
+    1000
+  );
+});
+
+
+$(function () {
+    ourApp.getAnswer();
+    ourApp.showLyrics();
+    ourApp.showLiquor();
+    ourApp.restartQuiz();
+
 // function to initiaze app
 ourApp.init = function (){
    ourApp.getAnswer();
@@ -197,4 +244,5 @@ ourApp.init = function (){
 //document ready
 $(function () {
     ourApp.init();
+
 });
