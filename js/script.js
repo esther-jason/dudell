@@ -1,5 +1,7 @@
+// empty object to place our whole app in
 const ourApp = {}
-// ourApp.quizResultVal = 0; 
+
+// function to get the answer from quiz
 ourApp.getAnswer = function () {
     $('.getResults').on('click', function (e) {
         e.preventDefault();
@@ -21,6 +23,7 @@ ourApp.getAnswer = function () {
             return a + b
         }, 0);
 
+        // getResults is pressed the quiz-results box will fade in and scroll directly to the quiz-results.
         $('.quiz-results').fadeIn(1000)
         $('html, body').animate({
             scrollTop: $('.quiz-results').offset().top
@@ -28,6 +31,7 @@ ourApp.getAnswer = function () {
         ourApp.assignSong(quizResultVal);
     });
 }
+// array of all the songs
 const popSongs = [
     `Justin Timberlake, SexyBack`,
     `Beyonce, Crazy in Love`,
@@ -74,37 +78,49 @@ const hiphopSongs = [
     `Eminem, Without Me`,
     `Missy Elliott, Work It`    
 ];
+// function to randomize the song choice based off of the quiz results
 ourApp.assignSong = function (quizData) {
     let songTitle;
     let drinkChoice;
     if (quizData >= 4 && quizData <= 6) {
+        // choose pop song
         const songChoice = Math.floor(Math.random() * popSongs.length);
         console.log(popSongs[songChoice]);
         songTitle = popSongs[songChoice];
         drinkChoice = 'vodka'
         // choose pop song
+
+
     } else if (quizData >= 7 && quizData <= 10) {
+        // choose rock song
         const songChoice = Math.floor(Math.random() * rockSongs.length);
         songTitle = rockSongs[songChoice]
         drinkChoice = 'whisky'
+
         // choose rock song
+
     } else if (quizData >= 11 && quizData <= 13) {
+        // choose hiphop
         const songChoice = Math.floor(Math.random() * hiphopSongs.length);
-        // console.log(hiphopSongs[songChoice]);
         songTitle = hiphopSongs[songChoice]
         drinkChoice = 'champagne'
+
         // choose hiphop
+
     } else if (quizData >= 14 && quizData <= 16) {
+        // choose classic
         const songChoice = Math.floor(Math.random() * classicSongs.length);
         songTitle = classicSongs[songChoice]
         drinkChoice = 'beer'
+
         // choose classic
+
     }
     ourApp.getSong(songTitle);
     ourApp.getDrink(drinkChoice);
 }
+// pulling the musixmatch api
 ourApp.getSong = (songChoice) => {
-    // console.log(songChoice.split(','));
     const songArray = songChoice.split(',')
     return $.ajax({
         url: 'https://proxy.hackeryou.com',
@@ -129,6 +145,8 @@ ourApp.getSong = (songChoice) => {
             console.log(res);
         })
 }
+
+// pulling the lcbo api
 ourApp.getDrink = (drinkQuery) => {
     return $.ajax({
         url: 'https://lcboapi.com/products',
@@ -142,7 +160,6 @@ ourApp.getDrink = (drinkQuery) => {
         }
     })
         .then((res) => {
-            // console.log(res.result)
             let drinks = res.result;
             let randomDrinkValue = Math.floor(Math.random() * 10);
             const drinkName = drinks[randomDrinkValue].name;
@@ -155,6 +172,7 @@ ourApp.getDrink = (drinkQuery) => {
         });
 }
 
+// show lyrics upon clicking the header
 ourApp.showLyrics = function(){
     $('.song-choice').on('click', function(e){
         e.preventDefault();
@@ -162,6 +180,7 @@ ourApp.showLyrics = function(){
         $('.songsWords').slideDown('slow');
     })
 }
+//shows the liquor upon clicking liquor
 ourApp.showLiquor = function () {
     $('.drink-choice').on('click', function (e) {
         e.preventDefault();
@@ -169,7 +188,7 @@ ourApp.showLiquor = function () {
         $('.showLiquor').slideDown('slow');
     })
 }
-
+// function to restart quiz
 ourApp.restartQuiz = function (){
     $('.restart').on('click', function(e) {
         location.reload();
@@ -177,6 +196,7 @@ ourApp.restartQuiz = function (){
        
     })
 }
+
 
 $("#first").click(function(){
 $("html, body").animate(
@@ -211,4 +231,18 @@ $(function () {
     ourApp.showLyrics();
     ourApp.showLiquor();
     ourApp.restartQuiz();
+
+// function to initiaze app
+ourApp.init = function (){
+   ourApp.getAnswer();
+    ourApp.showLyrics();
+    ourApp.showLiquor();
+    ourApp.restartQuiz();
+    $("a").smoothScroll(); 
+}
+
+//document ready
+$(function () {
+    ourApp.init();
+
 });
