@@ -82,7 +82,9 @@ input[type="radio"]:checked+label{
     
     height:100vh;
 }
-
+.quizSecondQ img {
+    margin:0 auto;
+}
 .quiz-questions {  
     display:grid;
     grid-template-columns: 1fr 1fr;  
@@ -125,7 +127,8 @@ a .fa-arrow-down {
     }
 }
 .quiz button,
-.restart button {
+.restart button,
+.clickHere {
     font-size: 18px;
     border:0px;
     font-family:'Raleway';
@@ -170,13 +173,15 @@ a .fa-arrow-down {
 .songsWords {
     display:none;
     font-family: Lato;
-    line-height: 40px;
+    line-height: 42px;
+    font-size:24px;
+    padding: 0 40px;
 }
 
-p.clickHere{
-    text-align: center;
-    padding: 0px;
-}
+// a.clickHere{
+//     // text-align: center;
+//     padding: 0px;
+// }
 
 .song-choice h2,
 .drink-choice h2 {
@@ -186,11 +191,12 @@ p.clickHere{
     text-align: center;
     text-transform: uppercase; 
     color: white;
+    font-size:40px;
     }
 
 
 .drink-choice {
-    text-align: center;
+    // text-align: center;
     img {
         border-radius: 5px; 
         max-width: 250px;
