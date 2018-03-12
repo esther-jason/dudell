@@ -226,13 +226,7 @@ $("#third").click(function() {
 });
 
 
-$(function () {
-    ourApp.getAnswer();
-    ourApp.showLyrics();
-    ourApp.showLiquor();
-    ourApp.restartQuiz();
-
-// function to initiaze app
+// function to initialize app
 ourApp.init = function (){
    ourApp.getAnswer();
     ourApp.showLyrics();
