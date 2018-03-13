@@ -436,7 +436,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   .drink-choice h2 {
     font-size: 24px; }
   button.clickHere {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .restart {
+    font-size: 12px; } }
 
 @media (max-width: 360px) {
   header p {
