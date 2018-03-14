@@ -440,6 +440,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   .restart {
     font-size: 12px; } }
 
+@media (max-width: 520px) {
+  .restart button {
+    padding: 0 50px; } }
+
 @media (max-width: 360px) {
   header p {
     padding: 40px 15px;
